@@ -1,66 +1,70 @@
 <!DOCTYPE html>
-<div class="member-card"><h3>Ombrog, Eugene</h3><p>Leader</p></div>
-<div class="member-card"><h3>Tenorio, Emmanuel Robert</h3><p>Member</p></div>
-<div class="member-card"><h3>Marco, Tobey D.</h3><p>Member</p></div>
-<div class="member-card"><h3>Duro, Kaith Marky</h3><p>Member</p></div>
-<div class="member-card"><h3>Enguerra, Aaron C.</h3><p>Member</p></div>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Team Leisure Dashboard</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="light-mode">
+
+
+<!-- THEME TOGGLE -->
+<div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+
+
+<!-- Sidebar -->
+<aside class="sidebar">
+<h2 class="logo">Team Leisure</h2>
+
+
+<ul class="menu">
+<li class="dropdown">
+<div class="dropdown-btn">
+Dashboard <span class="arrow">▼</span>
 </div>
-</section>
-
-
-<!-- PROFILE SECTION -->
-<section id="profile" class="section">
-<h1>Leader Profile</h1>
-<div class="profile-box">
-<h2>Eugene Ombrog</h2>
-<p>Leader • Team Leisure</p>
-<h3>Skills</h3>
-<ul>
-<li>HTML — ⭐⭐⭐⭐</li>
-<li>CSS — ⭐⭐⭐⭐</li>
-<li>Team Leadership — ⭐⭐⭐⭐⭐</li>
+<ul class="dropdown-content">
+<li onclick="showSection('overview')">Overview</li>
+<li onclick="showSection('activity')">Activity</li>
+<li onclick="showSection('reports')">Reports</li>
 </ul>
+</li>
+
+
+<li onclick="showSection('team')">Team Members</li>
+<li onclick="showSection('profile')">Leader Profile</li>
+<li onclick="showSection('charts')">Charts</li>
+<li onclick="showSection('settings')">Settings</li>
+</ul>
+</aside>
+
+
+<!-- Main Content -->
+<main class="main">
+
+
+<!-- OVERVIEW -->
+<section id="overview" class="section active">
+<h1>Dashboard Overview</h1>
+
+
+<div class="cards">
+<div class="card fade"><div class="icon">👥</div><h3>Total Members</h3><p>5</p></div>
+<div class="card fade"><div class="icon">📘</div><h3>Tasks Completed</h3><p>23</p></div>
+<div class="card fade"><div class="icon">📊</div><h3>Progress</h3><p>78%</p></div>
+<div class="card fade"><div class="icon">⭐</div><h3>Rating</h3><p>Excellent</p></div>
 </div>
 </section>
 
 
-<!-- CHARTS SECTION -->
-<section id="charts" class="section">
-<h1>Group Performance Charts</h1>
-<div class="chart-grid">
-<div class="chart-circle" data-value="78">78%</div>
-<div class="chart-circle" data-value="92">92%</div>
-<div class="chart-circle" data-value="65">65%</div>
+<!-- TEAM MEMBERS -->
+<section id="team" class="section">
+<h1>Team Members</h1>
+<div class="team-grid">
+<div class="member-card pop"><h3>Ombrog, Eugene</h3><p>Leader</p></div>
+<div class="member-card pop"><h3>Tenorio, Emmanuel Robert</h3><p>Member</p></div>
+<div class="member-card pop"><h3>Marco, Tobey D.</h3><p>Member</p></div>
+<div class="member-card pop"><h3>Duro, Kaith Marky</h3><p>Member</p></div>
+<div class="member-card pop"><h3>Enguerra, Aaron C.</h3><p>Member</p></div>
 </div>
-</section>
-
-
-<!-- SETTINGS -->
-<section id="settings" class="section">
-<h1>Settings</h1>
-<p>Customization will appear here.</p>
-</section>
-</main>
-
-
-<script>
-// Show / hide sections
-function showSection(id) {
-document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-}
-
-
-// Dropdown menu
-const dropBtn = document.querySelector('.dropdown-btn');
-if(dropBtn) {
-dropBtn.addEventListener('click', () => {
-document.querySelector('.dropdown-content').classList.toggle('show');
-document.querySelector('.arrow').classList.toggle('rotate');
-});
-}
-</script>
-
-
-</body>
 </html>
