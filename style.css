@@ -1,75 +1,118 @@
+/* === GENERAL === */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fb;
+    font-family: "Poppins", sans-serif;
     display: flex;
+    background: #f5f7fa;
 }
 
-/* Sidebar */
+/* === SIDEBAR === */
 .sidebar {
-    width: 250px;
-    background: linear-gradient(180deg, #0d1b2a, #1b263b);
+    width: 260px;
+    background: #111827;
     height: 100vh;
     color: white;
-    padding: 30px 20px;
+    padding: 25px;
     position: fixed;
 }
 
 .logo {
+    font-size: 24px;
     margin-bottom: 40px;
-    font-size: 22px;
-    font-weight: bold;
+    font-weight: 600;
+}
+
+.menu {
+    list-style: none;
+    padding-left: 0;
 }
 
 .menu li {
-    list-style: none;
-    padding: 12px;
+    padding: 12px 10px;
     border-radius: 8px;
+    margin-bottom: 5px;
     cursor: pointer;
-    margin-bottom: 8px;
-    transition: 0.2s;
+    transition: 0.25s;
 }
 
-.menu li:hover,
-.menu .active {
-    background: #415a77;
+.menu li:hover {
+    background: #1f2937;
 }
 
-/* Main Content */
+/* === DROPDOWN === */
+.dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow {
+    transition: 0.3s;
+}
+
+.arrow.rotate {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 8px;
+    display: none;
+}
+
+.dropdown-content li {
+    padding: 8px;
+    background: #1a2332;
+    margin: 3px 0;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+/* === MAIN CONTENT === */
 .main {
-    margin-left: 270px;
-    padding: 30px;
-    width: calc(100% - 270px);
+    margin-left: 260px;
+    padding: 40px;
+    width: calc(100% - 260px);
 }
 
 h1 {
-    font-size: 32px;
-    color: #1b263b;
+    color: #1f2937;
+    margin-bottom: 25px;
 }
 
-/* Cards */
+/* === CARDS LAYOUT === */
 .cards {
-    margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
 .card {
     background: white;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
     text-align: center;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card h3 {
-    color: #1b263b;
+    color: #111827;
+    font-size: 18px;
 }
 
 .card p {
-    margin-top: 10px;
     font-size: 26px;
+    margin-top: 10px;
     font-weight: bold;
-    color: #0d1b2a;
+    color: #3b82f6;
 }
