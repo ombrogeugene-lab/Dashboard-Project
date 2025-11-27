@@ -1,71 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team Leisure Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
-</head>
+<div class="member-card"><h3>Ombrog, Eugene</h3><p>Leader</p></div>
+<div class="member-card"><h3>Tenorio, Emmanuel Robert</h3><p>Member</p></div>
+<div class="member-card"><h3>Marco, Tobey D.</h3><p>Member</p></div>
+<div class="member-card"><h3>Duro, Kaith Marky</h3><p>Member</p></div>
+<div class="member-card"><h3>Enguerra, Aaron C.</h3><p>Member</p></div>
+</div>
+</section>
 
-<body>
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <h2 class="logo">Team Leisure</h2>
+<!-- PROFILE SECTION -->
+<section id="profile" class="section">
+<h1>Leader Profile</h1>
+<div class="profile-box">
+<h2>Eugene Ombrog</h2>
+<p>Leader • Team Leisure</p>
+<h3>Skills</h3>
+<ul>
+<li>HTML — ⭐⭐⭐⭐</li>
+<li>CSS — ⭐⭐⭐⭐</li>
+<li>Team Leadership — ⭐⭐⭐⭐⭐</li>
+</ul>
+</div>
+</section>
 
-        <ul class="menu">
-            <li class="dropdown">
-                <div class="dropdown-btn">
-                    Dashboard
-                    <span class="arrow">▼</span>
-                </div>
 
-                <!-- Dropdown items -->
-                <ul class="dropdown-content">
-                    <li>Overview</li>
-                    <li>Activity</li>
-                    <li>Reports</li>
-                </ul>
-            </li>
+<!-- CHARTS SECTION -->
+<section id="charts" class="section">
+<h1>Group Performance Charts</h1>
+<div class="chart-grid">
+<div class="chart-circle" data-value="78">78%</div>
+<div class="chart-circle" data-value="92">92%</div>
+<div class="chart-circle" data-value="65">65%</div>
+</div>
+</section>
 
-            <li>Team Members</li>
-        </ul>
-    </aside>
 
-    <!-- Main Content -->
-    <main class="main">
-        <h1>Dashboard Overview</h1>
+<!-- SETTINGS -->
+<section id="settings" class="section">
+<h1>Settings</h1>
+<p>Customization will appear here.</p>
+</section>
+</main>
 
-        <section class="cards">
-            <div class="card">
-                <h3>Total Members</h3>
-                <p>4</p>
-            </div>
 
-            <div class="card">
-                <h3>Pending Tasks</h3>
-                <p>12</p>
-            </div>
+<script>
+// Show / hide sections
+function showSection(id) {
+document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
 
-            <div class="card">
-                <h3>Project Status</h3>
-                <p>75%</p>
-            </div>
 
-            <div class="card">
-                <h3>Performance</h3>
-                <p>Excellent</p>
-            </div>
-        </section>
-    </main>
+// Dropdown menu
+const dropBtn = document.querySelector('.dropdown-btn');
+if(dropBtn) {
+dropBtn.addEventListener('click', () => {
+document.querySelector('.dropdown-content').classList.toggle('show');
+document.querySelector('.arrow').classList.toggle('rotate');
+});
+}
+</script>
 
-    <script>
-        // SIMPLE DROPDOWN FUNCTION
-        document.querySelector(".dropdown-btn").addEventListener("click", function () {
-            document.querySelector(".dropdown-content").classList.toggle("show");
-            document.querySelector(".arrow").classList.toggle("rotate");
-        });
-    </script>
 
 </body>
 </html>
