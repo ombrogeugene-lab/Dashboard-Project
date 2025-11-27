@@ -3,44 +3,69 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard Project</title>
+    <title>Team Leisure Dashboard</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <div class="sidebar">
-        <h2 class="logo">Team Dashboard</h2>
-        <ul class="menu">
-            <li class="active">Dashboard</li>
-            <li>Team Members</li>
-            <li>Projects</li>
-            <li>Profile</li>
-        </ul>
-    </div>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="logo">Team Leisure</h2>
 
-    <div class="main">
+        <ul class="menu">
+            <li class="dropdown">
+                <div class="dropdown-btn">
+                    Dashboard
+                    <span class="arrow">▼</span>
+                </div>
+
+                <!-- Dropdown items -->
+                <ul class="dropdown-content">
+                    <li>Overview</li>
+                    <li>Activity</li>
+                    <li>Reports</li>
+                </ul>
+            </li>
+
+            <li>Team Members</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
         <h1>Dashboard Overview</h1>
 
-        <div class="cards">
+        <section class="cards">
             <div class="card">
-                <h3>Members</h3>
-                <p>5</p>
+                <h3>Total Members</h3>
+                <p>4</p>
             </div>
+
             <div class="card">
-                <h3>Total Skills</h3>
-                <p>27</p>
+                <h3>Pending Tasks</h3>
+                <p>12</p>
             </div>
+
             <div class="card">
-                <h3>Proficiency</h3>
-                <p>80%</p>
+                <h3>Project Status</h3>
+                <p>75%</p>
             </div>
+
             <div class="card">
-                <h3>Active Projects</h3>
-                <p>3</p>
+                <h3>Performance</h3>
+                <p>Excellent</p>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <script>
+        // SIMPLE DROPDOWN FUNCTION
+        document.querySelector(".dropdown-btn").addEventListener("click", function () {
+            document.querySelector(".dropdown-content").classList.toggle("show");
+            document.querySelector(".arrow").classList.toggle("rotate");
+        });
+    </script>
 
 </body>
 </html>
